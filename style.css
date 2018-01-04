@@ -1,0 +1,102 @@
+@import url(img/'https://fonts.googleapis.com/css?family=Aclonica|Julius+Sans+One|Berkshire+Swash|Headland+One|Habibi|Artifika');
+
+h1 {
+width: 100%;
+//background-color: grey;
+color: black;
+font-family: "Berkshire Swash", "Comic Sans MS";
+font-size: 40px;
+text-transform: lowercase;
+text-shadow: 0px 4px 4px grey;
+margin-bottom: 0px;
+margin-top: 0px;
+padding-top: 20px;
+padding-bottom: 20px;
+//background: url(img/big.png);
+//background-repeat: no-repeat;
+}
+
+h2 {
+font-family: "Julius Sans One", "Comic Sans MS";
+font-size: 18px;
+text-transform: uppercase;
+margin-bottom: 0px;
+margin-top: 20px;
+padding-top: 5px;
+padding-bottom: 3px;
+text-shadow: 0px 2px 4px grey;
+}
+
+.button {
+width: 300px;
+border: none;
+box-shadow: 0px 4px 4px 0 grey;
+color: white;
+padding: 25px;
+margin: 10px;
+font-size: 22px;
+font-family: "Berkshire Swash", "Comic Sans MS";
+text-shadow: 2px 2px 5px black, -2px -2px 5px black;
+text-transform: capitalize;
+}
+
+.babydragon {
+background: url(img/babydragon.png);
+background-position: center;
+}
+
+.bear {
+background: url(img/bear.png);
+background-position: center;
+}
+
+.colorspray {
+background: url(img/colorspray.png);
+background-position: center;
+}
+
+.dungeon {
+background: url(img/dungeon.png);
+background-position: center;
+}
+
+.firespell {
+background: url(img/firespell.png);
+background-position: center;
+}
+
+
+
+.forest {
+background: url(img/forest.png);
+background-position: center;
+}
+
+.hit {
+background: url(img/hit.png);
+background-position: center;
+}
+
+.magic {
+background: url(img/magic.png);
+background-position: center;
+}
+
+.miss {
+background: url(img/miss.png);
+background-position: center;
+}
+
+.tavern {
+background: url(img/tavern.png);
+background-position: center;
+}
+
+.town {
+background: url(img/town.png);
+background-position: center;
+}
+
+.button:active {
+transform: translateY(3px);
+}

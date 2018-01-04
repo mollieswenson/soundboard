@@ -1,132 +1,25 @@
 <html>
-
 <head>
 
+<style>  @import url(img/'https://fonts.googleapis.com/css?family=Aclonica|Julius+Sans+One|Berkshire+Swash|Headland+One|Habibi|Artifika');
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<style>
-@import url('https://fonts.googleapis.com/css?family=Aclonica|Julius+Sans+One|Berkshire+Swash|Headland+One|Habibi|Artifika');
-
-h1 {
-width: 100%;
-//background-color: grey;
-color: black;
-font-family: "Berkshire Swash", "Comic Sans MS";
-font-size: 40px;
-text-transform: lowercase;
-text-shadow: 0px 4px 4px grey;
-margin-bottom: 0px;
-margin-top: 0px;
-padding-top: 20px;
-padding-bottom: 20px;
-//background: url(big.png);
-//background-repeat: no-repeat;
-}
-
-h2 {
-font-family: "Julius Sans One", "Comic Sans MS";
-font-size: 18px;
-text-transform: uppercase;
-margin-bottom: 0px;
-margin-top: 20px;
-padding-top: 5px;
-padding-bottom: 3px;
-text-shadow: 0px 2px 4px grey;
-}
-
-.button {
-width: 300px;
-border: none;
-box-shadow: 0px 4px 4px 0 grey;
-color: white;
-padding: 25px;
-margin: 10px;
-font-size: 22px;
-font-family: "Berkshire Swash", "Comic Sans MS";
-text-shadow: 2px 2px 5px black, -2px -2px 5px black;
-text-transform: capitalize;
-}
-
-.babydragon {
-background: url(babydragon.png);
-background-position: center; 
-}
-
-.bear {
-background: url(bear.png);
-background-position: center; 
-}
-
-.colorspray {
-background: url(colorspray.png);
-background-position: center; 
-}
-
-.dungeon {
-background: url(dungeon.png);
-background-position: center; 
-}
-
-.firespell {
-background: url(firespell.png);
-background-position: center; 
-}
-
-
-
-.forest {
-background: url(forest.png);
-background-position: center; 
-}
-
-.hit {
-background: url(hit.png);
-background-position: center; 
-}
-
-.magic {
-background: url(magic.png);
-background-position: center; 
-}
-
-.miss {
-background: url(miss.png);
-background-position: center; 
-}
-
-.tavern {
-background: url(tavern.png);
-background-position: center; 
-}
-
-.town {
-background: url(town.png);
-background-position: center; 
-}
-
-.button:active {
-transform: translateY(3px);
-}
-
-</style>
-
+<link rel="stylesheet" href="style.css">
+<script src="sounds.js"></script>
 </head>
 
 <body>
 <center>
 
-<audio id="Dungeon" src="dungeon.wav" preload="auto" loop></audio>
-<audio id="Tavern" src="tavern.wav" preload="auto" loop></audio>
-<audio id="Forest" src="forest.wav" preload="auto" loop></audio>
-<audio id="Town" src="town.mp3" preload="auto" loop></audio>
-<audio src="arrow_hit.wav" preload="auto"></audio>
-<audio src="sword_hit.wav" preload="auto"></audio>
-<audio src="hit.wav" preload="auto"></audio>
-<audio src="hit_hard.wav" preload="auto"></audio>
-
-
+<audio id="Dungeon" src="sounds/dungeon.wav" preload="auto" loop></audio>
+<audio id="Tavern" src="sounds/tavern.wav" preload="auto" loop></audio>
+<audio id="Forest" src="sounds/forest.wav" preload="auto" loop></audio>
+<audio id="Town" src="sounds/town.mp3" preload="auto" loop></audio>
+<audio src="sounds/arrow_hit.wav" preload="auto"></audio>
+<audio src="sounds/sword_hit.wav" preload="auto"></audio>
+<audio src="sounds/hit.wav" preload="auto"></audio>
+<audio src="sounds/hit_hard.wav" preload="auto"></audio>
 
 <h1>recrs Soundboard</h1>
 
@@ -146,137 +39,6 @@ transform: translateY(3px);
 <button class="button babydragon" onclick="playBabyDragonSounds()">Dragon</button>
 <button class="button firespell" onclick="playFireballSounds()">Fireball</button>
 <button class="button magic" onclick="playMagicSounds()">Magic</button>
-
-<script>
-
-
-var dungeonToggleStatus = document.getElementById("Dungeon");
-function toggleDungeon() {   //there has to be a better way to do these
-  document.getElementById('Forest').pause();
-  document.getElementById('Town').pause();
-  document.getElementById('Tavern').pause();
-  dungeonToggleStatus.paused ? dungeonToggleStatus.play() : dungeonToggleStatus.pause();
-};
-
-var forestToggleStatus = document.getElementById("Forest");
-function toggleForest() {
-  document.getElementById('Dungeon').pause();
-  document.getElementById('Town').pause();
-  document.getElementById('Tavern').pause();
-  forestToggleStatus.paused ? forestToggleStatus.play() : forestToggleStatus.pause();
-};
-
-var tavernToggleStatus = document.getElementById("Tavern");
-function toggleTavern() {
-  document.getElementById('Forest').pause();
-  document.getElementById('Town').pause();
-  document.getElementById('Dungeon').pause();
-  tavernToggleStatus.paused ? tavernToggleStatus.play() : tavernToggleStatus.pause();
-}; 
-
-var townToggleStatus = document.getElementById("Town");
-function toggleTown() {
-  document.getElementById('Forest').pause();
-  document.getElementById('Dungeon').pause();
-  document.getElementById('Tavern').pause();
-  townToggleStatus.paused ? townToggleStatus.play() : townToggleStatus.pause();
-}; 
-
-
-var element = 0; 
-
-function playHitSounds() {  
-    var sounds = ["arrow_hit.wav",  
-              "sword_hit.wav",
-              "hit.wav",
-              "hit_hard.wav"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	    element++;   
-}
-
-function playMissSounds() {
-    var sounds = ["arrow_miss.mp3", 
-              "arrow_miss.mp3",
-              "arrow_stick.mp3",
-              "arrow_stick.mp3"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	element++;  
-}
-
-function playRoarSounds() {
-    var sounds = ["bear.wav",   
-              "bear_1.wav",
-              "bear_2.wav",
-			  "bear_3.wav",
-              "bear_4.wav"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	element++; 
-}
-
-function playColorSounds() {
-    var sounds = ["colorspray.wav",  //find more sounds to add ?
-              "colorspray.wav",
-              "colorspray.wav",
-              "colorspray.wav"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	    element++;  
-}
-
-function playBabyDragonSounds() {
-    var sounds = ["dragon.wav",   
-              "dragon_1.wav",
-              "dragon_2.wav",
-			  "dragon_3.wav",
-			  "dragon_4.wav",
-		      "dragon_5.wav",
-              "dragon_6.wav"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	    element++; 
-}
-
-var playFireballSounds = function () {
-    var sounds = ["fireball.wav",  //find more sounds to add  
-              "fireball.wav",
-              "fireball.wav",
-              "fireball.wav"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	    element++; 
-}
-
-var playMagicSounds = function () {
-    var sounds = ["magic_black.wav",  //find more sounds to add  
-              "magic_backward.mp3",
-              "magic_bells.mp3",
-              "magic_backward.mp3"];
-    var index = Math.floor(Math.random() * (sounds.length));
-        thisSound = sounds[index];
-        $("body").append("<audio id=\"element" + element + "\"src=\"" + thisSound + "\">new</p>");  
-	    document.getElementById("element" + element).play();
-	    element++; 
-}
-
-</script>
-
-
-
 
 </body>
 </html>
